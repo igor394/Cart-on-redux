@@ -1,8 +1,10 @@
-
+import GoodsList from './Container/GoodsList';
 
 function App() {
   return (
     <>
+        <GoodsList/>
+
     </>
   );
 }
