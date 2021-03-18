@@ -6,10 +6,9 @@ export const goodsSlice = createSlice({
     initialState: {
         goods: goodsArr
     },
-    reducers: {
-
-    }
+    reducers: { }
 });
+
 
 // export const { } = goodsSlice.actions;
 export const selectGoods = state => state.goods.goods;
