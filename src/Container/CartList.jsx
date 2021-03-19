@@ -14,15 +14,15 @@ export default function CartList() {
         return acc;
     }, {});
 
-    let clickHandler = (e) => {
-        e.preventDefault();
-        let t = e.target;
-        switch (t.classList.value) {
-            case 'minus-good':
-                dispatch(minus(t.getAttribute('data-key')));
+    let clickHandler = (event) => {
+        event.preventDefault();
+        let targ = event.target;
+        switch (targ.classList.value) {
+            case 'minus-good btn btn-primary':
+                dispatch(minus(targ.getAttribute('data-key')));
                 break;
-            case 'del-good':
-                dispatch(delet(t.getAttribute('data-key')));
+            case 'del-good btn btn-primary':
+                dispatch(delet(targ.getAttribute('data-key')));
                 break;
             default:
                 return true;
@@ -32,13 +32,15 @@ export default function CartList() {
     let showCart;
     if (Object.keys(cart).length !== 0) {
         showCart = <Cart cart={cart} goodObj={goodObj}/>
-    } else showCart = <h3> Корзина пуста</h3>;
+    } else showCart = <h3>Cart is empty</h3>;
 
     return (
-        <>
-            <div onClick={clickHandler}>
-                {showCart}
+        <div className="container mt-4">
+            <div className="d-flex justify-content-center">
+                <div onClick={clickHandler}>
+                    {showCart}
+                </div>
             </div>
-        </>
+        </div>
     )
 }

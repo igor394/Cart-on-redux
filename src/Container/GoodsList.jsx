@@ -15,9 +15,8 @@ export default function GoodsList() {
 
     }
 
-
     return (
-        <div className="goods-field" onClick={clickHendler}>
+        <div className="d-flex justify-content-around" onClick={clickHendler}>
             {goods.map(item => <Goods obj={item} key={item.articul}/>)}
         </div>
     )

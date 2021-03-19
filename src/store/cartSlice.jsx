@@ -5,7 +5,7 @@ export const cartSlice = createSlice({
     initialState: {
         value: {}
     },
-    reducers:{
+    reducers: {
         increment: (state, data) => {
             let articul = data.payload;
             if (state.value[articul] === undefined) state.value[articul] = 0;
@@ -13,13 +13,13 @@ export const cartSlice = createSlice({
 
         },
         minus: (state, data) => {
-            let artic = data.payload;
-            if (state.value[artic] > 1) state.value[artic]--;
-            else if (state.value[artic] === 1) delete state.value[artic];
+            let articul = data.payload;
+            if (state.value[articul] > 1) state.value[articul]--;
+            else if (state.value[articul] === 1) delete state.value[articul];
         },
         delet: (state, data) => {
-            let artic = data.payload;
-            delete state.value[artic];
+            let articul = data.payload;
+            delete state.value[articul];
         }
     }
 });
